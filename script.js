@@ -12,7 +12,11 @@ buttons.forEach(button => {
             display.value = "";
             return;
         }
-
+        if (value === "⌫") {
+            currentInput = currentInput.slice(0, -1);
+            display.value = currentInput;
+           return;
+        }
         if (value === "=") {
             try {
                 currentInput = eval(currentInput).toString();
